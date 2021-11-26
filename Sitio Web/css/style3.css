@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "Pacifico";
+    src: url(../fonts/Pacifico-Regular.ttf);
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+.gallery__img{
+     object-fit: cover;
+     transition: all .5s;
+     padding: auto;
+     margin-bottom: 10px;
+ }
+ .gallery__img:hover{
+     transform: scale(1.1);
+ }
+.gallery__img--big{
+    height: 400px;
+}
+.gallery__img--small{
+    height: 200px;
+}
+.container__gallery{
+    padding: 30px 0px 60px;
+}
+@media screen and (min-width:480px){
+    .container__gallery{
+        padding: 5px 0px;
+    }
+    .gallery__img:hover{
+        transform: scale(1.04);
+    }
+}
+.modal{
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+    cursor: default;
+}
+.modal__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.modal__img{
+    width: 50%;
+    height: 90vh;
+    object-fit: contain;
+}
+.modal__boton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background:#DE423A;
+    font-size: 2.5em;
+    text-align: center;
+    border-radius: 50%;
+}
+.modal--open{
+    display: block;
+}

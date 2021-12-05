@@ -1,51 +1,59 @@
+const form = document.getElementById("form");
+
+
+let limpiar = () => {
+    form.reset();
+}
+
 let guardar = () => {
 
-    
     var nombre, correo, telefono, direccion, expresion ;
     nombre = document.getElementById("txtNombre").value;
     correo = document.getElementById("txtCorreo").value;
     telefono = document.getElementById("txtTelefono").value;
     direccion = document.getElementById("txtDireccion").value;
     
-    expresion = /\w+@\w+\.+[a-z]/; 
-  
+    //expresion = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
+    
+    function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+
+
+
     if(nombre.length == 0 || correo.length == 0 || telefono.length == 0 || direccion.length == 0){
-        alert("Todos los campos son obligatorios");
+       $('#campovacio').modal('show');
         return true;
     }else if(nombre.length > 30){
-      alert("En el campo nombre solo se aceptan 30 caracteres como maximo");
+      $('#nombreLength').modal('show');
       return true;
-    }else if(correo.length > 30){
-      alert("En el campo correo solo se aceptan 30 caracteres como maximo");
-      return true;
-    }else if(expresion.test(correo)){
-      alert("El correo no es valido");
-      return true;
-    }
-    else if(telefono.length < 8 || telefono.length > 11){
-      alert("En el campo telefono se aceptan 8 digitos minimo y 11 maximo");
+    }else if(telefono.length < 8 || telefono.length>8){
+        $('#telefonoLength').modal('show');
       return true;
     }else if(direccion.length > 50){
-      alert("En el campo direccion solo se aceptan 50 caracteres como maximo");
+        $('#direccionLength').modal('show');
       return true;
- } else{
-
-        let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);
+    }else if(correo.test == isEmail){
+        $('#correo').modal('show');
+      return true;
+    }
+    else{
+     let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);
 
     
     let nombre = document.querySelector("#txtNombre").value;
     let correo = document.querySelector("#txtCorreo").value;
     let telefono = document.querySelector("#txtTelefono").value;
     let direccion = document.querySelector("#txtDireccion").value;
-    let estado = document.querySelector("#estado").value;
+    
 
         datos.push({
         
-            'nombre' : nombre,
-            'correo' : correo,
-            'telefono' : telefono,
-            'direccion' : direccion,
-            'estado' : estado
+            nombre : nombre,
+            correo : correo,
+            telefono : telefono,
+            direccion : direccion,
+            
         });
 
         localStorage.info = JSON.stringify(datos);
@@ -53,17 +61,11 @@ let guardar = () => {
         listar();
     
         alert("Se guardo");
-        
+        form.reset();
         
     }
-
     
 }
-
-/*resetForm(); {
-document.getElementById('form.form').reset();
-}*/
-
 
 
 let listar = () => {
@@ -77,7 +79,7 @@ let listar = () => {
                 <td>${element.correo}</td>
                 <td>${element.telefono}</td>
                 <td>${element.direccion}</td>
-                <td>${element.estado}</td>
+                
                 <td>
                     <button class="btn btn-primary" onclick="editar(${element.documento})">Editar</button>
                     <button class="btn btn-danger" onclick="eliminar(${element.documento})">Eliminar</button>
@@ -88,31 +90,21 @@ let listar = () => {
 }
 
 
-let cmb = () => {
-    let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);
-    let cmb = document.querySelector("#cmbDatos");
-    cmb.innerHTML = "";
-    datos.forEach(element => {
-        cmb.innerHTML += `
-            <select>
-              
 
-            </select>
-        `;
-    });
+
+combo();
+function combo(){
+  if(localStorage.getItem("nombre")){
+    const clave1 = localStorage.getItem("info");
+    const clave = localStorage.getItem("nombre");
+    console.log(clave);
+    console.log(clave1);
+  }else{
+      console.log("No")
+  }
+  
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -124,7 +116,6 @@ let editar = (doc) => {
     let correo = document.querySelector("#txtCorreo");
     let telefono = document.querySelector("#txtTelefono");
     let direccion = document.querySelector("#txtDireccion");
-    let estado = document.querySelector("#estado");
     let id = document.querySelector("#txtId");
 
     let btnGuardar = document.querySelector("#btnGuardar");
@@ -143,9 +134,10 @@ let editar = (doc) => {
         correo.value = resultado.correo;
         telefono.value = resultado.telefono;
         direccion.value = resultado.direccion;
-        estado.value = resultado.estado;
+       
 
         id.value = resultadoIndex;
+       
     }else{
         alert("No lo encontro");
     }
@@ -158,38 +150,33 @@ let modificar = () => {
     let correo = document.querySelector("#txtCorreo").value;
     let telefono = document.querySelector("#txtTelefono").value;
     let direccion = document.querySelector("#txtDireccion").value;
-    let estado = document.querySelector("#estado").value;
+   
     let id = document.querySelector("#txtId").value;
 
     expresion = /\w+@\w+\.+[a-z]/; 
   
     if(nombre.length == 0 || correo.length == 0 || telefono.length == 0 || direccion.length == 0){
-        alert("Todos los campos son obligatorios");
-        return true;
-    }else if(nombre.length > 30){
-      alert("En el campo nombre solo se aceptan 30 caracteres como maximo");
-      return true;
-    }else if(correo.length > 30){
-      alert("En el campo correo solo se aceptan 30 caracteres como maximo");
-      return true;
-    }else if(expresion.test(correo)){
-      alert("El correo no es valido");
-      return true;
-    }
-    else if(telefono.length < 8 || telefono.length > 11){
-      alert("En el campo telefono se aceptan 8 digitos minimo y 11 maximo");
-      return true;
-    }else if(direccion.length > 50){
-      alert("En el campo direccion solo se aceptan 50 caracteres como maximo");
-      return true;
- } else{
+        $('#campovacio').modal('show');
+         return true;
+     }else if(nombre.length > 30){
+       $('#nombreLength').modal('show');
+       return true;
+     }else if(telefono.length < 8 || telefono.length>8){
+         $('#telefonoLength').modal('show');
+       return true;
+     }else if(direccion.length > 50){
+         $('#direccionLength').modal('show');
+       return true;
+     }else if(correo.test == isEmail){
+         $('#correo').modal('show');
+       return true;
+     } else{
     let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);
 
     let nombre = document.querySelector("#txtNombre").value;
     let correo = document.querySelector("#txtCorreo").value;
     let telefono = document.querySelector("#txtTelefono").value;
     let direccion = document.querySelector("#txtDireccion").value;
-    let estado = document.querySelector("#estado").value;
     let id = document.querySelector("#txtId").value;
 
     let btnGuardar = document.querySelector("#btnGuardar");
@@ -200,7 +187,7 @@ let modificar = () => {
     datos[id].correo = correo;
     datos[id].telefono = telefono;
     datos[id].direccion = direccion;
-    datos[id].estado = estado;
+    
 
     btnGuardar.style.display = "block";
     btnModificar.style.display = "none";
@@ -210,10 +197,14 @@ let modificar = () => {
     listar();
 
     alert("Se modifico");
+    form.reset();
 
  }
 
 }
+
+
+
 
 
 let eliminar = (doc) => {

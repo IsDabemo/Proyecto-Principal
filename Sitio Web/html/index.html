@@ -31,10 +31,12 @@
                 <ul class="menu" id="menu">
                     <li class="menu__item"><a href="../html/index.html" class="menu__link menu__link--select">Inicio</a></li>
                     <li class="menu__item"><a href="nosotros.html" class="menu__link">Nosotros</a></li>
-                    <li class="menu__item"><a href="galeria.html" class="menu__link">Galeria</a></li>
+                    <li class="menu__item"><a href="menu.html" class="menu__link">Menú</a></li>
                     <li class="menu__item"><a href="contactenos.html" class="menu__link">Contáctenos</a></li>
+                  </ul>
                 </ul>
                 <div class="social-icon">
+                    <a href="../html/carrito.html"><span class="icon-carrito"><img src="../img/icons8_add_shopping_cart_32.png" alt=""></span></a></a>
                     <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
                     <a href="" class="social-icon__link"><span class="icon-instagram"></span></a>
                     <a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
@@ -78,25 +80,29 @@
             <section class="group today-specials">
                 <h2 class="group__title">Especiales de hoy</h2>
                 <div class="container container--flex">
-                    <column class="column column--50-25">
+                    <column class="column column--50-25 columnaProducto">
                         <img src="../img/plate1.jpg" alt="" class="today-special__img">
-                        <div class="today-special__title">Especial del dia 1</div>
-                        <div class="today-special__price">$99</div>
+                        <div class="today-special__title titulo">Ensalada</div>
+                        <div class="today-special__price precio">L.150</div>
+                        <button class="btn btn-danger">Comprar</button>
                     </column>
-                    <column class="column column--50-25">
+                    <column class="column column--50-25 columnaProducto">
                         <img src="../img/plate2.jpg" alt="" class="today-special__img">
-                        <div class="today-special__title">Especial del dia 2</div>
-                        <div class="today-special__price">$99</div>
+                        <div class="today-special__title titulo">Paqueques</div>
+                        <div class="today-special__price precio">L.80</div>
+                        <button class="btn btn-danger">Comprar</button>
                     </column>
-                    <column class="column column--50-25">
+                    <column class="column column--50-25 columnaProducto">
                         <img src="../img/plate5.jpg" alt="" class="today-special__img">
-                        <div class="today-special__title">Especial del dia 3</div>
-                        <div class="today-special__price">$99</div>
+                        <div class="today-special__title titulo">Ceviche</div>
+                        <div class="today-special__price precio">L.200</div>
+                        <button class="btn btn-danger">Comprar</button>
                     </column>
-                    <column class="column column--50-25">
+                    <column class="column column--50-25 columnaProducto">
                         <img src="../img/plate6.jpg" alt="" class="today-special__img">
-                        <div class="today-special__title">Especial del dia 4</div>
-                        <div class="today-special__price">$99</div>
+                        <div class="today-special__title titulo">Pinchos</div>
+                        <div class="today-special__price precio">L.220</div>
+                        <button class="btn btn-danger">Comprar</button>
                     </column>
                 </div>
             </section>
@@ -129,5 +135,6 @@
             </div>
         </footer> 
         <script src="../js/menu.js"></script>
+        <script src="../js/carrito.js"></script>
     </body>
 </html>

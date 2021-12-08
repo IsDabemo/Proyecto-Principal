@@ -62,7 +62,9 @@
     border: none;
     cursor: pointer;
     font-size: 1em;
+    margin-top: 20px;
 }
+
 @media screen and (min-width:480px) {
     .contact .container--flex{
         align-items: flex-start;
@@ -76,8 +78,79 @@
         height:435px;
     }
 }
-@media screen and (min-width:768){
+#checkbox1{
+    align-items: flex-start;
+    margin-top: 10px;
+    width: 15px;
+    height: 15px;
+}
+@media screen and (min-width:768px){
     .contact-information .column__title{
         font-weight: 1.5em;
     }
+
+}
+
+.banner{
+    margin-top: -255px;
+}
+/*tablas*/
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.tabla{
+    width: 100%;
+    border: 1 solid #DE423A;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+.tabla__titulo{
+    font-size: 1.4em;
+    font-family: 'Pacifico',cursive;
+    margin-bottom: 15px;
+}
+
+.tabla tr{
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.tabla tr td:nth-child(5){
+    font-size: .65em;
+    text-align: justify;
+}
+
+.tabla tr td:nth-child(3){
+   font-size: .6em;
+   padding: 10px;
+}
+.tabla td{
+    font-size: .85em;
+    text-align: center;
+    padding: 20px;
+}
+
+.tabla thead{
+    text-transform: uppercase;
+}
+
+.tabla tbody tr:hover{
+    background-color: rgba(0,0,0,.2);
+}
+
+.tabla tbody td:hover{
+    background-color: rgba(0,0,0,.2);
+}
+
+.tabla tr th{
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9em;
+    padding: 0 10px;
 }

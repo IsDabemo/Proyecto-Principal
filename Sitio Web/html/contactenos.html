@@ -31,9 +31,9 @@
                 <span class="icon-menu" id="btnmenu"></span>
                 <ul class="menu" id="menu">
                     <li class="menu__item"><a href="../html/index.html" class="menu__link">Inicio</a></li>
-                    <li class="menu__item"><a href="nosotros.html" class="menu__link">Nosotros</a></li>
-                    <li class="menu__item"><a href="galeria.html" class="menu__link">Galeria</a></li>
+                    <li class="menu__item"><a href="reservaciones.html" class="menu__link">Reservaciones</a></li>
                     <li class="menu__item"><a href="contactenos.html" class="menu__link menu__link--select">Contáctenos</a></li>
+                    <li class="menu__item"><a href="Informacion.html" class="menu__link">Información</a></li>
                 </ul>
                 <div class="social-icon">
                     <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
@@ -49,7 +49,7 @@
         </section>
         <main class="main">
             <div class="group contact">
-                <h2 class="group__title">Contáctenos</h2>
+                <h2 class="group__title">Contáctanos</h2>
                 <div class="container container--flex">
                     <div class="contact-information column column--50">
                         <h3 class="column__title">Información de contacto</h3>
@@ -72,16 +72,121 @@
                         </div>
                     </div> 
                     <form action="" method="post" class="formulario column column--50">
-                        <label for="" class="formulario__label">Nombre:</label>
-                        <input type="text" class="formulario__input_txt" name="nombre">
-                        <label for="" class="formulario__label">Correo:</label>
-                        <input type="text" class="formulario__input_txt" name="correo">
-                        <label for="" class="formulario__label">Teléfono:</label>
-                        <input type="text" class="formulario__input_txt" name="telefono">
-                        <label for="" class="formulario__label">Mensaje:</label>
-                        <textarea name="mensaje" id="" cols="30" rows="10" class="formulario__textarea"></textarea>
+                        <label for="txt_id" class="formulario__label">ID:</label>
+                        <input  id="txt_id" type="text" class="formulario__input_txt" name="ID" required>                        
+                        <label for="txt_nombre" class="formulario__label">Nombre:</label>
+                        <input id="txt_nombre" type="text" class="formulario__input_txt " name="nombre" required>
+                        <label for="txt_correo" class="formulario__label">Correo:</label>
+                        <input id="txt_correo" type="text" class="formulario__input_txt " name="correo" required>
+                        <label for="txt_telefono" class="formulario__label">Teléfono:</label>
+                        <input  id="txt_telefono" type="text" class="formulario__input_txt" name="telefono" required>
+                        <label for="txt_descripcion" class="formulario__label">Mensaje:</label>
+                        <textarea id="txt_descripcion" name="mensaje" id="" cols="30" rows="10" class="formulario__textarea"></textarea>
+                        <input type="button" type="reset" class="btn formulario__btn" value="Enviar" id="btn_enviar">
+                    </form>
+
+                    <table class="tabla" id="tabla__contactanos">
+                        <caption class="tabla__titulo">Datos Generales</caption>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Telefono</th>
+                                <th>Descripcion</th>
+                                <th>Seleccionar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+ 
+                        </tbody>
+                     </table>
+                </div>
+                <h2 class="group__title">Tipo de Reservaciones</h2>
+                <div class="container container--flex">
+                    <div class="contact-information column column--50">
+                        <h3 class="column__title">Tipo de Reservaciones</h3>
+                        <p class="column_txt">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Eligendi distinctio delectus maiores voluptas quaerat, 
+                            atque id quo temporibus consequatur illum. Recusandae, 
+                            maxime architecto? Quidem fugiat vitae reprehenderit, 
+                            commodi animi recusandae!
+                        </p>
+                        <p class="column_txt"><span class="icon-telephone"></span>Teléfono 1: +504 3367-3508</p>
+                        <p class="column_txt"><span class="icon-telephone"></span>Teléfono 2: 555-555-555</p>
+                        <p class="column_txt"><span class="icon-map"></span>Francisco Morazán - Tegucigalpa</p>
+                        <p class="column_txt"><span class="icon-mail"></span>consultas@yourrestaurant.com</p>
+                        <div class="social-icon">
+                            <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
+                            <a href="" class="social-icon__link"><span class="icon-instagram"></span></a>
+                            <a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
+                            <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
+                        </div>
+                    </div> 
+                     <form action="" method="post" class="formulario column column--50">
+                        <label for="" class="formulario__label">Tipo de reservacion: </label>
+                        <select name="opciones" id="" class="formulario__input_txt">
+                            <option value="1"></option>
+                            <option value="2">Opcion 2</option>
+                            <option value="3">Opcion 3</option>
+                            <option value="4">Opcion 4</option>
+                            <option value="5">Opcion 5</option>
+                            <option value="6">Opcion 6</option>
+                        </select>
+                        <label for="" class="formulario__label">Cantidad de personas: </label>
+                        <select name="opciones" id="" class="formulario__input_txt">
+                            <option value="1"></option>
+                            <option value="2">Opcion 2</option>
+                            <option value="3">Opcion 3</option>
+                            <option value="4">Opcion 4</option>
+                            <option value="5">Opcion 5</option>
+                            <option value="6">Opcion 6</option>
+                        </select>
+                        <label for="" class="formulario__label">Fecha: </label>
+                        <input type="date" class="formulario__input_txt" id="res_hora">
+                        <label for="" class="formulario__label">Hora: </label>
+                        <input type="time" class="formulario__input_txt" id="res_tiempo">
+                        <label for="cheRecordar">Acepto todas las condiciones y politicas de privacidad</label>
+                        <input type="checkbox" name="" id="checkbox1" value="true">
                         <input type="submit" class="btn formulario__btn" value="Enviar">
                     </form>
+
+                    <table class="tabla" id="tabla__contactanos">
+                        <caption class="tabla__titulo">Tipo de Reservaciones</caption>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tipo de Reservacion</th>
+                                <th>Cantidad de Personas</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Confirmar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+ 
+                        </tbody>
+                     </table>
+                </div>
+                <div class="container container--flex">
+                    <table class="tabla" id="tabla__contactanos">
+                        <caption class="tabla__titulo">Informacion del cliete</caption>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Tipo de Reservacion</th>
+                                <th>Subtotal</th>
+                                <th>ISV</th>
+                                <th>Descuento</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+ 
+                        </tbody>
+                     </table>
                 </div>
             </div>
         </main>
@@ -113,5 +218,7 @@
             </div>
         </footer> 
         <script src="../js/menu.js"></script>
+        <script src="../js/contactanos.js"></script>
+        <script src="../js/informacion.js"></script>
     </body>
 </html>

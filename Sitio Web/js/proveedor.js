@@ -3,6 +3,14 @@ const form = document.getElementById("form");
 
 let limpiar = () => {
     form.reset();
+
+
+    let btnGuardar = document.querySelector("#btnGuardar");
+    let btnModificar = document.querySelector("#btnModificar");
+
+    btnGuardar.style.display = "block";
+    btnModificar.style.display = "none";
+
 }
 
 let guardar = () => {
@@ -27,9 +35,7 @@ let guardar = () => {
     }else if(direccion.length > 50){
         $('#direccionLength').modal('show');
       return true;
-    }else if(correo.test == isEmail){
-        $('#correo').modal('show');
-      return true;
+    
     }
     else{
     let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);

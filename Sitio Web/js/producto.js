@@ -3,6 +3,12 @@ cargarSelect();
 
 let limpiar = () => {
     form.reset();
+
+    let btnGuardar = document.querySelector("#btnGuardar");
+    let btnModificar = document.querySelector("#btnModificar");
+
+    btnGuardar.style.display = "block";
+    btnModificar.style.display = "none";
 }
 
 let guardar = () => {

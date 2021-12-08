@@ -13,7 +13,7 @@ const showModal = () => {
     })
 
     carrito.forEach(plato => {
-        const cantPlato = Number(document.querySelector('.add').value);
+        const cantPlato = Number(plato.cantidad);
         cantidad = cantidad + cantPlato;
     })
 
@@ -43,7 +43,6 @@ const showModal = () => {
             </div>
         `;
     } else {
-        totalCantidad();
         modalWrap.innerHTML = `
             <div class="modal" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
@@ -169,7 +168,6 @@ function totalCantidad() {
     carrito.forEach(plato => {
         const cantPlato = Number(plato.cantidad);
         cantidad = cantidad + cantPlato;
-        console.log(cantPlato);
     })
     carCantidad.innerHTML =`Cantidad: ${cantidad}`;
 }

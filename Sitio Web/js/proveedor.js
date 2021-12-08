@@ -13,13 +13,7 @@ let guardar = () => {
     telefono = document.getElementById("txtTelefono").value;
     direccion = document.getElementById("txtDireccion").value;
     
-    //expresion = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
     
-    function isEmail(email) {
-        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-    }
-
-
 
     if(nombre.length == 0 || correo.length == 0 || telefono.length == 0 || direccion.length == 0){
        $('#campovacio').modal('show');
@@ -38,7 +32,7 @@ let guardar = () => {
       return true;
     }
     else{
-     let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);
+    let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);
 
     
     let nombre = document.querySelector("#txtNombre").value;
@@ -92,19 +86,7 @@ let listar = () => {
 
 
 
-combo();
-function combo(){
-  if(localStorage.getItem("nombre")){
-    const clave1 = localStorage.getItem("info");
-    const clave = localStorage.getItem("nombre");
-    console.log(clave);
-    console.log(clave1);
-  }else{
-      console.log("No")
-  }
-  
 
-}
 
 
 
@@ -153,7 +135,6 @@ let modificar = () => {
    
     let id = document.querySelector("#txtId").value;
 
-    expresion = /\w+@\w+\.+[a-z]/; 
   
     if(nombre.length == 0 || correo.length == 0 || telefono.length == 0 || direccion.length == 0){
         $('#campovacio').modal('show');
@@ -166,9 +147,6 @@ let modificar = () => {
        return true;
      }else if(direccion.length > 50){
          $('#direccionLength').modal('show');
-       return true;
-     }else if(correo.test == isEmail){
-         $('#correo').modal('show');
        return true;
      } else{
     let datos = localStorage.info==null?[]:JSON.parse(localStorage.info);

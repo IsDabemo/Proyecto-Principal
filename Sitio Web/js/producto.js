@@ -92,14 +92,14 @@ let listar = () => {
 
 
 function cargarSelect() {
-    //borramos  todas las filas de la tabla excepto los encabezados
+    
     $('#cmbProveedor option').remove();
     const datos = JSON.parse(localStorage.getItem("info")); 
     for (var i in datos) 
     {
-        var con = datos[i]; //obtenemos un objeto json por c/contacto y lo guardamos en  la variable con
+        var con = datos[i]; 
 
-        //agregamos la fila en la tabla contactos con la info del objeto json(con) y   en la columna Acciones, 2 botones para eliminar y seleccionar los contactos, agregándole en su atributo alt el índice del ciclo (for) que almacena en cada iteración la variable (i)
+        
         $('#cmbProveedor').append('<option>' + con.nombre + '</option>');
 
 
@@ -134,7 +134,7 @@ let editar = (doc) => {
         btnModificar.style.display = "block";
 
         
-        nombrePro.value = resultado.nombre;
+        nombrePro.value = resultado.nombrePro;
         categoria.value = resultado.categoria;
         proveedor.value = resultado.proveedor;
         precio.value = resultado.precio;
@@ -176,7 +176,7 @@ let modificar = () => {
     return true;
 }
   else{
-    let dato = localStorage.info==null?[]:JSON.parse(localStorage.info);
+    let dato = localStorage.producto==null?[]:JSON.parse(localStorage.info);
 
     let nombrePro = document.querySelector("#txtNombre").value;
     let categoria = document.querySelector("#cmbCategoria").value;
@@ -202,7 +202,7 @@ let modificar = () => {
     btnGuardar.style.display = "block";
     btnModificar.style.display = "none";
 
-    localStorage.info = JSON.stringify(dato);
+    localStorage.producto = JSON.stringify(dato);
 
     listar();
 

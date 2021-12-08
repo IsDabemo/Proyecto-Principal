@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../css/font.css" rel="stylesheet">
+    <link href="../css/style1.css" rel="stylesheet"> 
+    <link href="../css/header.css" rel="stylesheet"> 
+    
+   
+    <title>Proveedor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+        
+</head>
+
+<body onload="listar()">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="robots" content="index">
+        <link href="../css/font.css" rel="stylesheet">
+        <link href="../css/style1.css" rel="stylesheet">      
+        <title>Sitio Web</title>
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container container--flex ">
+                <div class="logo-container column column--50">
+                    <h1 class="logo">Restaurante El Gustazo</h1>
+                </div>
+                <div class="main-header__contactInfo column column--50">
+                    <p class="main-header__contactInfo__phone">
+                        <span class="icon-telephone">Teléfono: +504 3367-3508</span>
+                    </p>
+                    <p class="main-header__contactInfo__address">
+                        <span class="icon-map">Francisco Morazán - Tegucigalpa</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <div class="container container--flex">
+                <span class="icon-menu" id="btnmenu"></span>
+                <ul class="menu" id="menu">
+                    <li class="menu__item"><a href="../html/index.html" class="menu__link menu__link--select">Inicio</a></li>
+                    <li class="menu__item"><a href="nosotros.html" class="menu__link">Nosotros</a></li>
+                    <li class="menu__item"><a href="galeria.html" class="menu__link">Galeria</a></li>
+                    <li class="menu__item"><a href="proveedor.html" class="menu__link">Proveedor</a></li>
+                    <li class="menu__item"><a href="productos.html" class="menu__link">Productos</a></li>
+                </ul>
+                <div class="social-icon">
+                    <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
+                    <a href="" class="social-icon__link"><span class="icon-instagram"></span></a>
+                    <a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
+                    <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
+                </div>            
+            </div>
+        </nav>
+<br>
+
+      <div class="container">
+         <h3>Formulario de Proveedores</h3>
+      </div>
+  <br> <br>
+
+   
+    <div class="container">
+        <form action="" id="form" class="form">
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="txtNombre" id="lbNombre">Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre" required>
+                   
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="txtCorreo" id="lbCorreo">Correo</label>
+                    <input type="email" class="form-control" id="txtCorreo" required>
+                   
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="txtTelefono" id="lbTelefono">Teléfono</label>
+                    <input type="number" class="form-control" id="txtTelefono" required>
+                    
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="txtDireccion" id="lbDireccion">Dirección</label>
+                    <input type="text" class="form-control" id="txtDireccion" required>
+                    
+                </div>
+            </div>
+           
+            <input type="hidden" id="txtId">
+             
+            
+            <div class="col-12">
+                <button id="btnLimpiar" type="button" class="btn btn-success float-right"  onclick="limpiar()">Limpiar</button>
+                <button id="btnGuardar" type="button" class="btn btn-success float-right" data-bs-target="campovacio" onclick="guardar()">Guardar</button> 
+                <button id="btnModificar" style="display:none" type="button" class="btn btn-warning float-right" onclick="modificar()">Modificar</button>
+            </div>
+        </form>
+        </div>
+        <br>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tblDatos">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    <!-- Modal -->
+<div class="modal fade" id="campovacio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Debes llenar todos los campos</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+     <!-- Modal -->
+<div class="modal fade" id="nombreLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>En el campo nombre solo se aceptan 30 caracteres como maximo</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+     <!-- Modal -->
+<div class="modal fade" id="telefonoLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>En el campo telefono solo se aceptan 8 digitos</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="direccionLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>En el campo direccion solo se aceptan 50 caracteres como maximo</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="correo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Correo Invalido</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <footer class="main-footer">
+        <div class="container container--flex">
+            <column class="column--33">
+                <h2 class="column__title">¿Por qué visitarnos?</h2>
+                <p class="column_txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Reprehenderit, temporibus. Tempore repellat voluptatem placeat cum vel, 
+                    aut nam, ipsam dolor sit eveniet minus culpa et error maxime laborum beatae! 
+                    Aliquid.
+                </p>
+            </column>
+            <column class="column--33">
+                <h2 class="column__title">Contáctenos</h2>
+                <p class="column_txt">Francisco Morazán - Tegucigalpa</p>
+                <p class="column_txt">Teléfono: +504 3367-3508</p>
+                <p class="column_txt">davidferchavez2001@gmail.com</p>
+            </column>
+            <column class="column--33">
+                <h2 class="column__title">Síguenos en nuestras redes sociales</h2>
+                <p class="column_txt"><a href="" class="icon-facebook">Facebook</a></p>
+                <p class="column_txt"><a href="" class="icon-instagram">Instagram</a></p>
+                <p class="column_txt"><a href="" class="icon-twitter">Twitter</a></p>
+                <p class="column_txt"><a href="" class="icon-youtube">Youtube</a></p>
+            </column>
+            <p class="copy"> 2021 Sitio Web | Todos los derechos reservados son de la empresa escarbajo</p>
+        </div>
+    </footer> 
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+  
+    <script src="../js/proveedor.js"></script>
+    <script src="../js/menu.js"></script>
+   
+
+
+</body>
+
+</html>
+

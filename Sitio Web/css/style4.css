@@ -101,7 +101,10 @@
     margin: auto;
     padding: 20px;
 }
-
+a{
+    text-decoration: none;
+    color: white;
+}
 .tabla{
     width: 100%;
     border: 1 solid #DE423A;
@@ -150,6 +153,43 @@
 }
 
 .tabla tr th{
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9em;
+    padding: 0 10px;
+}
+
+
+.tabla2{
+    width: 100%;
+    border: 1 solid #DE423A;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+.tabla2 tr{
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
+.tabla2 td{
+    font-size: .85em;
+    text-align: center;
+    padding: 20px;
+}
+
+.tabla2 thead{
+    text-transform: uppercase;
+}
+
+.tabla2 tbody tr:hover{
+    background-color: rgba(0,0,0,.2);
+}
+
+.tabla2 tbody td:hover{
+    background-color: rgba(0,0,0,.2);
+}
+
+.tabla2 tr th{
     font-family: 'Montserrat', sans-serif;
     font-size: .9em;
     padding: 0 10px;

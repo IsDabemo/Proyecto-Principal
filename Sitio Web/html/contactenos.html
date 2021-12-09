@@ -76,16 +76,16 @@
                     </div> 
                     <form action="" method="post" class="formulario column column--50">
                         <label for="txt_id" class="formulario__label">ID:</label>
-                        <input  id="txt_id" type="text" class="formulario__input_txt" name="ID" required>                        
+                        <input  id="txt_id" type="text" class="formulario__input_txt" name="ID" required=true>                        
                         <label for="txt_nombre" class="formulario__label">Nombre:</label>
-                        <input id="txt_nombre" type="text" class="formulario__input_txt " name="nombre" required>
+                        <input id="txt_nombre" type="text" class="formulario__input_txt " name="nombre" required="true">
                         <label for="txt_correo" class="formulario__label">Correo:</label>
                         <input id="txt_correo" type="text" class="formulario__input_txt " name="correo" required>
                         <label for="txt_telefono" class="formulario__label">Teléfono:</label>
                         <input  id="txt_telefono" type="text" class="formulario__input_txt" name="telefono" required>
                         <label for="txt_descripcion" class="formulario__label">Mensaje:</label>
                         <textarea id="txt_descripcion" name="mensaje" id="" cols="30" rows="10" class="formulario__textarea"></textarea>
-                        <input type="button" type="reset" class="btn formulario__btn" value="Enviar" id="btn_enviar">
+                        <input type="button" class="btn formulario__btn" value="Guardar" id="btn_enviar">
                     </form>
 
                     <table class="tabla" id="tabla__contactanos">
@@ -130,21 +130,20 @@
                      <form action="" method="post" class="formulario column column--50">
                         <label for="" class="formulario__label">Tipo de reservacion: </label>
                         <select name="opciones" id="txt_tipo_reservacion" class="formulario__input_txt">
-                            <option value="1"></option>
-                            <option value="2">Opcion 2</option>
-                            <option value="3">Opcion 3</option>
-                            <option value="4">Opcion 4</option>
-                            <option value="5">Opcion 5</option>
-                            <option value="6">Opcion 6</option>
+                            <option value="1">Desayuno</option>
+                            <option value="2">Almuerzo</option>
+                            <option value="3">Cena</option>
                         </select>
                         <label for="" class="formulario__label">Cantidad de personas: </label>
                         <select name="opciones" id="txt_cantidad" class="formulario__input_txt">
-                            <option value="1"></option>
-                            <option value="2">Opcion 2</option>
-                            <option value="3">Opcion 3</option>
-                            <option value="4">Opcion 4</option>
-                            <option value="5">Opcion 5</option>
-                            <option value="6">Opcion 6</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
                         </select>
                         <label for="" class="formulario__label">Fecha: </label>
                         <input type="date" class="formulario__input_txt" id="txt_fecha">
@@ -155,35 +154,16 @@
                         <input type="button" class="btn formulario__btn" value="Reservar" id="btn_reservar">
                     </form>
 
-                    <table class="tabla" id="tabla__contactanos2">
+                    <table class="tabla2" id="tabla__contactanos2">
                         <caption class="tabla__titulo">Tipo de Reservaciones</caption>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Cliente</th>
                                 <th>Tipo de Reservacion</th>
                                 <th>Cantidad de Personas</th>
                                 <th>Fecha</th>
                                 <th>Hora</th>
                                 <th>Confirmar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
- 
-                        </tbody>
-                     </table>
-                </div>
-                <div class="container container--flex">
-                    <table class="tabla" id="tabla__contactanos">
-                        <caption class="tabla__titulo">Informacion del cliete</caption>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Tipo de Reservacion</th>
-                                <th>Subtotal</th>
-                                <th>ISV</th>
-                                <th>Descuento</th>
-                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>

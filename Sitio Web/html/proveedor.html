@@ -67,168 +67,163 @@
           <img src="../img/banner3.jpg" alt="" class="banner__img" />
           <div class="banner__content">La mejor y exquisita comida esta aqui!</div>
         </section>
-<br>
-
+    <main class="main">
       <div class="container">
-         <h3>Formulario de Proveedores</h3>
-      </div>
-  <br> <br>
-
-   
-    <div class="container">
-        <form action="" id="form" class="form">
-        <div class="row">
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="txtNombre" id="lbNombre">Nombre</label>
-                    <input type="text" class="form-control" id="txtNombre" required>
-                   
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="txtCorreo" id="lbCorreo">Correo</label>
-                    <input type="email" class="form-control" id="txtCorreo" required>
-                   
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="txtTelefono" id="lbTelefono">Teléfono</label>
-                    <input type="number" class="form-control" id="txtTelefono" required>
-                    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="txtDireccion" id="lbDireccion">Dirección</label>
-                    <input type="text" class="form-control" id="txtDireccion" required>
-                    
-                </div>
-            </div>
-           
-            <input type="hidden" id="txtId">
+        <h2>Formulario de Proveedores</h2>
+          <form action="" id="form" class="form">
+          <div class="row">
+              <div class="col-3">
+                  <div class="form-group">
+                      <label for="txtNombre" id="lbNombre">Nombre</label>
+                      <input type="text" class="form-control" id="txtNombre" required>
+                     
+                  </div>
+              </div>
+              <div class="col-3">
+                  <div class="form-group">
+                      <label for="txtCorreo" id="lbCorreo">Correo</label>
+                      <input type="email" class="form-control" id="txtCorreo" required>
+                     
+                  </div>
+              </div>
+              <div class="col-3">
+                  <div class="form-group">
+                      <label for="txtTelefono" id="lbTelefono">Teléfono</label>
+                      <input type="number" class="form-control" id="txtTelefono" required>
+                      
+                  </div>
+              </div>
+              <div class="col-3">
+                  <div class="form-group">
+                      <label for="txtDireccion" id="lbDireccion">Dirección</label>
+                      <input type="text" class="form-control" id="txtDireccion" required>
+                      
+                  </div>
+              </div>
              
-            
-            <div class="col-12">
-                <button id="btnLimpiar" type="button" class="btn btn-success float-right"  onclick="limpiar()">Limpiar</button>
-                <button id="btnGuardar" type="button" class="btn btn-success float-right" data-bs-target="campovacio" onclick="guardar()">Guardar</button> 
-                <button id="btnModificar" style="display:none" type="button" class="btn btn-warning float-right" onclick="modificar()">Modificar</button>
-            </div>
-        </form>
-        </div>
-        <br>
-        <div class="row">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Teléfono</th>
-                        <th>Dirección</th>
-                        <th>Opciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tblDatos">
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    
-    <!-- Modal -->
-<div class="modal fade" id="campovacio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>Debes llenar todos los campos</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+              <input type="hidden" id="txtId">
+               
+              
+              <div class="col-12">
+                  <button id="btnLimpiar" type="button" class="btn btn-success float-right"  onclick="limpiar()">Limpiar</button>
+                  <button id="btnGuardar" type="button" class="btn btn-success float-right" data-bs-target="campovacio" onclick="guardar()">Guardar</button> 
+                  <button id="btnModificar" style="display:none" type="button" class="btn btn-warning float-right" onclick="modificar()">Modificar</button>
+              </div>
+          </form>
+          </div>
+          <br>
+          <div class="row">
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Nombre</th>
+                          <th>Correo</th>
+                          <th>Teléfono</th>
+                          <th>Dirección</th>
+                          <th>Opciones</th>
+                      </tr>
+                  </thead>
+                  <tbody id="tblDatos">
+  
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  
+      
+      <!-- Modal -->
+  <div class="modal fade" id="campovacio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p>Debes llenar todos los campos</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-
-     <!-- Modal -->
-<div class="modal fade" id="nombreLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>En el campo nombre solo se aceptan 30 caracteres como maximo</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
-        </div>
-      </div>
-    </div>
-  </div>
-
-     <!-- Modal -->
-<div class="modal fade" id="telefonoLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>En el campo telefono solo se aceptan 8 digitos</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+  
+  
+       <!-- Modal -->
+  <div class="modal fade" id="nombreLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p>En el campo nombre solo se aceptan 30 caracteres como maximo</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-
-  <div class="modal fade" id="direccionLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>En el campo direccion solo se aceptan 50 caracteres como maximo</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal fade" id="correo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>Correo Invalido</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+  
+       <!-- Modal -->
+  <div class="modal fade" id="telefonoLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p>En el campo telefono solo se aceptan 8 digitos</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-
+  
+  
+    <div class="modal fade" id="direccionLength" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p>En el campo direccion solo se aceptan 50 caracteres como maximo</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="modal fade" id="correo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p>Correo Invalido</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button> 
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    </main>
 
 
     <footer class="main-footer">

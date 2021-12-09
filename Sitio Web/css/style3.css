@@ -11,6 +11,10 @@
     font-weight: bold;
     src: url(../fonts/Montserrat-Bold.ttf);
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 .gallery__img{
      object-fit: cover;
      transition: all .5s;

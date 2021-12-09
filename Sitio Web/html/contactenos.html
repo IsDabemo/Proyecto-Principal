@@ -31,16 +31,19 @@
                 <span class="icon-menu" id="btnmenu"></span>
                 <ul class="menu" id="menu">
                     <li class="menu__item"><a href="../html/index.html" class="menu__link">Inicio</a></li>
-                    <li class="menu__item"><a href="reservaciones.html" class="menu__link">Reservaciones</a></li>
-                    <li class="menu__item"><a href="contactenos.html" class="menu__link menu__link--select">Contáctenos</a></li>
-                    <li class="menu__item"><a href="Informacion.html" class="menu__link">Información</a></li>
+                    <li class="menu__item"><a href="../html/menu.html" class="menu__link">Menú</a></li>
+                    <li class="menu__item"><a href="../html/productos.html" class="menu__link">Productos</a></li>
+                    <li class="menu__item"><a href="../html/proveedor.html" class="menu__link">Proveedores</a></li>
+                    <li class="menu__item"><a href="../html/Empleados.html" class="menu__link">Empleados</a></li>
+                    <li class="menu__item"><a href="../html/contactenos.html" class="menu__link menu__link--select">Contáctenos</a></li>
                 </ul>
                 <div class="social-icon">
-                    <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
-                    <a href="" class="social-icon__link"><span class="icon-instagram"></span></a>
-                    <a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
-                    <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
-                </div>            
+                    ` <a href="../html/carrito.html"><span class="icon-carrito"><img src="../img/icons8_add_shopping_cart_32.png" alt=""></span></a></a>
+                      <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
+                      <a href="" class="social-icon__link"><span class="icon-instagram"></span></a>
+                      <a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
+                      <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
+                  </div>            
             </div>
         </nav>
         <section class="banner">
@@ -126,7 +129,7 @@
                     </div> 
                      <form action="" method="post" class="formulario column column--50">
                         <label for="" class="formulario__label">Tipo de reservacion: </label>
-                        <select name="opciones" id="" class="formulario__input_txt">
+                        <select name="opciones" id="txt_tipo_reservacion" class="formulario__input_txt">
                             <option value="1"></option>
                             <option value="2">Opcion 2</option>
                             <option value="3">Opcion 3</option>
@@ -135,7 +138,7 @@
                             <option value="6">Opcion 6</option>
                         </select>
                         <label for="" class="formulario__label">Cantidad de personas: </label>
-                        <select name="opciones" id="" class="formulario__input_txt">
+                        <select name="opciones" id="txt_cantidad" class="formulario__input_txt">
                             <option value="1"></option>
                             <option value="2">Opcion 2</option>
                             <option value="3">Opcion 3</option>
@@ -144,15 +147,15 @@
                             <option value="6">Opcion 6</option>
                         </select>
                         <label for="" class="formulario__label">Fecha: </label>
-                        <input type="date" class="formulario__input_txt" id="res_hora">
+                        <input type="date" class="formulario__input_txt" id="txt_fecha">
                         <label for="" class="formulario__label">Hora: </label>
-                        <input type="time" class="formulario__input_txt" id="res_tiempo">
+                        <input type="time" class="formulario__input_txt" id="txt_hora">
                         <label for="cheRecordar">Acepto todas las condiciones y politicas de privacidad</label>
                         <input type="checkbox" name="" id="checkbox1" value="true">
-                        <input type="submit" class="btn formulario__btn" value="Enviar">
+                        <input type="button" class="btn formulario__btn" value="Reservar" id="btn_reservar">
                     </form>
 
-                    <table class="tabla" id="tabla__contactanos">
+                    <table class="tabla" id="tabla__contactanos2">
                         <caption class="tabla__titulo">Tipo de Reservaciones</caption>
                         <thead>
                             <tr>

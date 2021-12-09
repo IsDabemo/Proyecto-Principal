@@ -7,7 +7,8 @@ function agregarPersona(pid,pnombre,pcorreo,ptelefono,pdescripcion,pseleccionar)
         correo: pcorreo,
         telefono: ptelefono,
         descripcion: pdescripcion,
-        seleccionar: pseleccionar
+        seleccionar: pseleccionar,
+        reservacionList: [] 
     };
     console.log(nuevaPersona);
     contactanosLista.push(nuevaPersona);
@@ -28,3 +29,30 @@ function obtenerPersona(){
 function localStoragePersona(plist){
     localStorage.setItem('localPersona', JSON.stringify(plist));
 }
+
+function buscarPersona(pid){
+    var objetoPer;
+    for(var i = 0; i < contactanosLista.length; i++){
+        if(contactanosLista[i].id == pid){
+            objetoPer = contactanosLista[i];
+        }
+    }
+    return objetoPer;
+}
+
+function agregarReservacion(pobjeto,ptipo,pcant,pfecha,phora){
+    var objetoRes = {
+        tipo: ptipo,
+        cant: pcant,
+        fecha: pfecha,
+        hora: phora
+    }
+
+    var index = contactanosLista.indexOf(pobjeto);
+    pobjeto.reservacionList.push(objetoRes);
+
+    contactanosLista[index] = pobjeto;
+    localStoragePersona(contactanosLista);
+}
+
+

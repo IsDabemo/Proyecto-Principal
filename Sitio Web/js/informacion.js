@@ -1,4 +1,5 @@
 document.querySelector('#btn_enviar').addEventListener('click', salvarInformacion);
+document.querySelector('#btn_reservar').addEventListener('click', agregarReservacion);
 imprimirPersona();
 
 function salvarInformacion(){
@@ -38,8 +39,24 @@ function imprimirPersona(){
         var inputSeleccionar = document.createElement('input');
         inputSeleccionar.type = 'radio';
         inputSeleccionar.value = list[i].id;
+        inputSeleccionar.name = "btn_seleccionar"
         columnaSeleccionar.appendChild(inputSeleccionar);
       
         tbody.appendChild(fila);
     }
+}
+
+function agregarRes(){
+    var sTipo = document.querySelector('#txt_tipo_reservacion').value,
+    sCantidad = document.querySelector('#txt_cantidad').value,
+    sFecha = document.querySelector('#txt_fecha').value,
+    sHora = document.querySelector('#txt_hota').value,
+    sPersonaID = document.querySelector('#tabla_contactanos tbody input[type=radio]:checked').value;
+    sPersonaNom = document.querySelector('#tabla_contactanos tbody input[type=radio]:checked').value;
+
+    var objetoPersonasID = buscarPersona(sPersonaID);
+    var objetoPersonasNom = buscarPersona(sPersonaNom);
+    
+    agregarReservacion(sPersonaID,sPersonaNom,sTipo,sCantidad,sFecha,sHora);
+
 }

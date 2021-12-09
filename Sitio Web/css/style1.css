@@ -73,7 +73,7 @@ h1,h2,h3,h4,h5,h6{
     width: 100%;
     position: relative;
     z-index: 2000;
-    padding: 10px;
+    padding: 0;
 }
 .icon-menu{
     display: block;
@@ -108,7 +108,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .menu{
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
     padding: 0;
@@ -133,7 +133,7 @@ h1,h2,h3,h4,h5,h6{
     background: #DE423A;
 }
 .mostrar{
-    height: 196px;
+    height: 295px;
 }
 /*---------------------Estilos de banner------------------------*/
 .banner{

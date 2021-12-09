@@ -45,7 +45,7 @@ function guardarlocalstorage() {
      
   }
   localStorage.setItem("login", JSON.stringify(login));
-  window.open('./Empleados.html', 'Empleados');
+  window.open('./index.html', 'Inicio');
 } else {
   $('#modal').modal('show');
 
